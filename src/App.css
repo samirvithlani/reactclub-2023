@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+h1{
+  color: aqua;
+}
 
 .App-logo {
   height: 40vmin;

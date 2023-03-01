@@ -1,23 +1,38 @@
 import logo from './logo.svg';
 import './App.css';
+import { Header } from './Header';
+import Footer from './Footer';
+import { Employee } from './components/Employee';
 
 function App() {
+  var no1 = 10;
+  var name = "samir"
+  var isActive = true;
+
+  var style = {
+    color: "red",
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Employee/>
+
+
+      {/* <h1 style={style}>APP</h1> */}
+      {/* <h1>
+        Name = {name}
+      </h1>
+      <h2>
+        No1 = {no1}
+      </h2>
+      <h3>
+        isActive = {
+          isActive ? "Yes" : "No"
+        }
+      </h3> */}
+      {/* <Header/>
+      <Footer/> */}
     </div>
   );
 }
