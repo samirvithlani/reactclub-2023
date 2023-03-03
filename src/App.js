@@ -3,6 +3,7 @@ import './App.css';
 import { Header } from './Header';
 import Footer from './Footer';
 import { Employee } from './components/Employee';
+import { AddProduct } from './components/AddProduct';
 
 function App() {
   var no1 = 10;
@@ -16,7 +17,8 @@ function App() {
   return (
     <div className="App">
 
-      <Employee/>
+      {/* <Employee/> */}
+      <AddProduct/>
 
 
       {/* <h1 style={style}>APP</h1> */}
