@@ -4,6 +4,7 @@ import { Header } from './Header';
 import Footer from './Footer';
 import { Employee } from './components/Employee';
 import { AddProduct } from './components/AddProduct';
+import { Student } from './components/Student';
 
 function App() {
   var no1 = 10;
@@ -16,9 +17,9 @@ function App() {
 
   return (
     <div className="App">
-
+  <Student/>
       {/* <Employee/> */}
-      <AddProduct/>
+      {/* <AddProduct/> */}
 
 
       {/* <h1 style={style}>APP</h1> */}
