@@ -5,6 +5,11 @@ import Footer from './Footer';
 import { Employee } from './components/Employee';
 import { AddProduct } from './components/AddProduct';
 import { Student } from './components/Student';
+import { Test } from './components/Test';
+import City from './components/CityStateDropDown';
+import { Counter } from './hooks/Counter';
+
+
 
 function App() {
   var no1 = 10;
@@ -17,7 +22,8 @@ function App() {
 
   return (
     <div className="App">
-  <Student/>
+  {/* <Student/> */}
+  <Counter/>
       {/* <Employee/> */}
       {/* <AddProduct/> */}
 
