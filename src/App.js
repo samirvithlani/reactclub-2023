@@ -15,6 +15,9 @@ import { AboutUs } from "./Pages/AboutUs";
 import { ContactUs } from "./Pages/ContactUs";
 import { Manager } from "./Pages/Manager";
 import { Info } from "./Pages/Info";
+import { Ceo } from "./Pages/Ceo";
+import { UserList } from "./api/UserList";
+import { AddUser } from "./api/AddUser";
 
 function App() {
   var no1 = 10;
@@ -31,6 +34,8 @@ function App() {
       {/* <Counter/> */}
       {/* <Navbar /> */}
 
+      <UserList/>
+      <AddUser/>
       <Routes>
       
         <Route path="/" element={<Navbar />} />
@@ -38,6 +43,7 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/contact/manager"  element={<Manager/>} />
+        <Route path="/ceo" element={<Ceo/>} />
         <Route path="/about/info/:id" element= {<Info/>} />
         <Route path="/*" element={<h1>404</h1>}/>
         
