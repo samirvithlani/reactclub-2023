@@ -17,8 +17,9 @@ import { Manager } from "./Pages/Manager";
 import { Info } from "./Pages/Info";
 import { Ceo } from "./Pages/Ceo";
 import { UserList } from "./api/UserList";
-import { AddUser } from "./api/AddUser";
+
 import { UserApi } from "./query/UserApi";
+import { AddUser } from "./query/AddUser";
 
 function App() {
   var no1 = 10;
@@ -35,7 +36,6 @@ function App() {
       {/* <Counter/> */}
       {/* <Navbar /> */}
 
-      <UserApi/>
       <Routes>
       
         <Route path="/" element={<Navbar />} />
@@ -48,6 +48,8 @@ function App() {
         <Route path="/*" element={<h1>404</h1>}/>
         <Route path ="/adduser" element={<AddUser/>}/>
         <Route path ="/userlist" element={<UserList/>}/>
+        <Route path ="/userapi" element={<UserApi/>}/>
+        <Route path ="/adduser" element={<AddUser/>}/>
         
       </Routes>
 

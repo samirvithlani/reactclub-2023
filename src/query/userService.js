@@ -1,8 +1,18 @@
 import axios from "axios"
-import { useQuery } from "react-query"
+import { useMutation, useQuery } from "react-query"
 
 const fetchUserData = ()=>{
     return axios.get("http://localhost:3001/user/user")
+}
+const addUserData = (data)=>{
+    return axios.post("http://localhost:3001/user/user",data)
+}
+export const useAddData = () =>{
+
+    return useMutation(addUserData,{
+        
+    })
+
 }
 export const useFetchData = () =>{
 
