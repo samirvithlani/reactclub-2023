@@ -20,6 +20,10 @@ import { UserList } from "./api/UserList";
 
 import { UserApi } from "./query/UserApi";
 import { AddUser } from "./query/AddUser";
+import { LoginUser } from "./components/LoginUser";
+import ProtectedRoutes from "./ProtecctedRoutes";
+import { AddExp } from "./expense/AddExp";
+import { AppContext } from "./context";
 
 function App() {
   var no1 = 10;
@@ -29,29 +33,34 @@ function App() {
   var style = {
     color: "red",
   };
+  const id = 12;
 
   return (
     <div className="App">
       {/* <Student/> */}
       {/* <Counter/> */}
       {/* <Navbar /> */}
+      <AppContext.Provider value={{ id }}>
+        <Routes>
+          <Route element={<ProtectedRoutes />}>
+            <Route path="/" element={<Navbar />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/about" element={<AboutUs />} />
+          </Route>
 
-      <Routes>
-      
-        <Route path="/" element={<Navbar />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="/contact" element={<ContactUs />} />
-        <Route path="/contact/manager"  element={<Manager/>} />
-        <Route path="/ceo" element={<Ceo/>} />
-        <Route path="/about/info/:id" element= {<Info/>} />
-        <Route path="/*" element={<h1>404</h1>}/>
-        <Route path ="/adduser" element={<AddUser/>}/>
-        <Route path ="/userlist" element={<UserList/>}/>
-        <Route path ="/userapi" element={<UserApi/>}/>
-        <Route path ="/adduser" element={<AddUser/>}/>
-        
-      </Routes>
+          <Route path="/addexp" element={<AddExp />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/login" element={<LoginUser />} />
+          <Route path="/contact/manager" element={<Manager />} />
+          <Route path="/ceo" element={<Ceo />} />
+          <Route path="/about/info/:id" element={<Info />} />
+          <Route path="/*" element={<h1>404</h1>} />
+          <Route path="/adduser" element={<AddUser />} />
+          <Route path="/userlist" element={<UserList />} />
+          <Route path="/userapi" element={<UserApi />} />
+          <Route path="/adduser" element={<AddUser />} />
+        </Routes>
+      </AppContext.Provider>
 
       {/* <Employee/> */}
       {/* <AddProduct/> */}
