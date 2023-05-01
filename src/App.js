@@ -24,6 +24,12 @@ import { LoginUser } from "./components/LoginUser";
 import ProtectedRoutes from "./ProtecctedRoutes";
 import { AddExp } from "./expense/AddExp";
 import { AppContext } from "./context";
+import { EcomNavbar } from "./ecom/EcomNavbar";
+import { DashBoard } from "./ecom/DashBoard";
+import { CartDetail } from "./ecom/CartDetail";
+import { Sidebar } from "./pms/Sidebar";
+import { UploadDemo } from "./components/UploadDemo";
+import { MuiDemo1 } from "./mui/MuiDemo1";
 
 function App() {
   var no1 = 10;
@@ -36,37 +42,51 @@ function App() {
   const id = 12;
 
   return (
-    <div className="App">
-      {/* <Student/> */}
-      {/* <Counter/> */}
-      {/* <Navbar /> */}
-      <AppContext.Provider value={{ id }}>
-        <Routes>
-          <Route element={<ProtectedRoutes />}>
-            <Route path="/" element={<Navbar />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/about" element={<AboutUs />} />
-          </Route>
+    <div className="layout-wrapper layout-content-navbar">
+      <div className="layout-container">
 
-          <Route path="/addexp" element={<AddExp />} />
-          <Route path="/contact" element={<ContactUs />} />
-          <Route path="/login" element={<LoginUser />} />
-          <Route path="/contact/manager" element={<Manager />} />
-          <Route path="/ceo" element={<Ceo />} />
-          <Route path="/about/info/:id" element={<Info />} />
-          <Route path="/*" element={<h1>404</h1>} />
-          <Route path="/adduser" element={<AddUser />} />
-          <Route path="/userlist" element={<UserList />} />
-          <Route path="/userapi" element={<UserApi />} />
-          <Route path="/adduser" element={<AddUser />} />
-        </Routes>
-      </AppContext.Provider>
+        {/* <Student/> */}
+        {/* <Counter/> */}
+        {/* <Navbar /> */}
+        {/* <EcomNavbar/> */}
+        <Sidebar />
+        <div className="content-wrapper">
+          <div class="container-xxl flex-grow-1 container-p-y">
+            <AppContext.Provider value={{ id }}>
+              <Routes>
+                <Route element={<ProtectedRoutes />}>
+                  <Route path="/home" element={<DashBoard />} />
+                  <Route path="/home" element={<Home />} />
+                  <Route path="/about" element={<AboutUs />} />
+                  
+                </Route>
+                  <Route path="/upload" element={<UploadDemo/>}></Route>
+                  <Route path="/mui" element={<MuiDemo1/>}></Route>
+                <Route path="/addexp" element={<AddExp />} />
+                <Route path="/contact" element={<ContactUs />} />
+                <Route path="/login" element={<LoginUser />} />
+                <Route path="/contact/manager" element={<Manager />} />
+                <Route path="/ceo" element={<Ceo />} />
+                <Route path="/about/info/:id" element={<Info />} />
+                {/* <Route path="/*" element={<h1>404</h1>} /> */}
+                <Route path="/adduser" element={<AddUser />} />
+                <Route path="/userlist" element={<UserList />} />
+                <Route path="/userapi" element={<UserApi />} />
+                <Route path="/adduser" element={<AddUser />} />
+                <Route
+                  path="/cart/cartdetail/:id"
+                  element={<CartDetail />}
+                ></Route>
+              </Routes>
+            </AppContext.Provider>
+          </div>
+        </div>
 
-      {/* <Employee/> */}
-      {/* <AddProduct/> */}
+        {/* <Employee/> */}
+        {/* <AddProduct/> */}
 
-      {/* <h1 style={style}>APP</h1> */}
-      {/* <h1>
+        {/* <h1 style={style}>APP</h1> */}
+        {/* <h1>
         Name = {name}
       </h1>
       <h2>
@@ -77,8 +97,9 @@ function App() {
           isActive ? "Yes" : "No"
         }
       </h3> */}
-      {/* <Header/>
+        {/* <Header/>
       <Footer/> */}
+      </div>
     </div>
   );
 }
