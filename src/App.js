@@ -30,6 +30,8 @@ import { CartDetail } from "./ecom/CartDetail";
 import { Sidebar } from "./pms/Sidebar";
 import { UploadDemo } from "./components/UploadDemo";
 import { MuiDemo1 } from "./mui/MuiDemo1";
+import { UpdateUser } from "./components/UpdateUser";
+import { DynamicForm } from "./components/DynamicForm";
 
 function App() {
   var no1 = 10;
@@ -44,7 +46,6 @@ function App() {
   return (
     <div className="layout-wrapper layout-content-navbar">
       <div className="layout-container">
-
         {/* <Student/> */}
         {/* <Counter/> */}
         {/* <Navbar /> */}
@@ -52,21 +53,23 @@ function App() {
         <Sidebar />
         <div className="content-wrapper">
           <div class="container-xxl flex-grow-1 container-p-y">
+            
             <AppContext.Provider value={{ id }}>
               <Routes>
                 <Route element={<ProtectedRoutes />}>
-                  <Route path="/home" element={<DashBoard />} />
+                  <Route path="/" element={<DashBoard />} />
                   <Route path="/home" element={<Home />} />
                   <Route path="/about" element={<AboutUs />} />
-                  
                 </Route>
-                  <Route path="/upload" element={<UploadDemo/>}></Route>
-                  <Route path="/mui" element={<MuiDemo1/>}></Route>
+                <Route path="/upload" element={<UploadDemo />}></Route>
+                <Route path ="/userreg" element ={<UpdateUser/>}></Route>
+                <Route path="/mui" element={<MuiDemo1 />}></Route>
                 <Route path="/addexp" element={<AddExp />} />
                 <Route path="/contact" element={<ContactUs />} />
                 <Route path="/login" element={<LoginUser />} />
                 <Route path="/contact/manager" element={<Manager />} />
                 <Route path="/ceo" element={<Ceo />} />
+                <Route path = "/form" element = {<DynamicForm/>}></Route>
                 <Route path="/about/info/:id" element={<Info />} />
                 {/* <Route path="/*" element={<h1>404</h1>} /> */}
                 <Route path="/adduser" element={<AddUser />} />

@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 
 export const Sidebar = () => {
     var style1 = {
@@ -16,6 +17,16 @@ export const Sidebar = () => {
     var style4={
         top: "0px; height: 137px"
 
+    }
+    var user = {
+      id: 1,
+      name: "Samir",
+      email: "sam@gmail.com"
+    }
+    var user1 ={
+      id: 1,
+      name: "Samir",
+      email: "sam@gmail.com"
     }
   return (
     <>
@@ -70,6 +81,7 @@ export const Sidebar = () => {
       <div class="menu-inner-shadow"></div>
 
       <ul class="menu-inner py-1 ps ps--active-y">
+        <Link to="/userreg" state={{user,user1}}>user</Link>
         <li class="menu-item active">
           <a href="index.html" class="menu-link">
             <i class="menu-icon tf-icons bx bx-home-circle"></i>

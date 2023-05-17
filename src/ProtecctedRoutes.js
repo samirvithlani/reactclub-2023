@@ -7,6 +7,7 @@ const useAuth = () =>{
 }
 
 const ProtectedRoutes = ()=>{
+    
     const flag = useAuth();
     return(
         flag? <Outlet/> : <LoginUser/>
