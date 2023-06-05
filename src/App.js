@@ -32,6 +32,7 @@ import { UploadDemo } from "./components/UploadDemo";
 import { MuiDemo1 } from "./mui/MuiDemo1";
 import { UpdateUser } from "./components/UpdateUser";
 import { DynamicForm } from "./components/DynamicForm";
+import { MuiTable } from "./mui/MuiTable";
 
 function App() {
   var no1 = 10;
@@ -71,6 +72,7 @@ function App() {
                 <Route path="/ceo" element={<Ceo />} />
                 <Route path = "/form" element = {<DynamicForm/>}></Route>
                 <Route path="/about/info/:id" element={<Info />} />
+                <Route path = "/muitable" element = {<MuiTable/>}></Route>
                 {/* <Route path="/*" element={<h1>404</h1>} /> */}
                 <Route path="/adduser" element={<AddUser />} />
                 <Route path="/userlist" element={<UserList />} />
