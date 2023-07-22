@@ -16,6 +16,7 @@ export const UserList = () => {
         setusers(res.data.data);
       })
       .catch((err) => {});
+      
   };
 
   const deleteUser = async (id) => {

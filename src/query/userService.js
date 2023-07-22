@@ -5,7 +5,7 @@ const fetchUserData = ()=>{
     return axios.get("http://localhost:3001/user/user")
 }
 const addUserData = (data)=>{
-    return axios.post("http://localhost:3001/user/user",data)
+    return axios.post("/user/user",data)
 }
 export const useAddData = () =>{
 

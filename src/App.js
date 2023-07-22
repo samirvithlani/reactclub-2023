@@ -33,6 +33,11 @@ import { MuiDemo1 } from "./mui/MuiDemo1";
 import { UpdateUser } from "./components/UpdateUser";
 import { DynamicForm } from "./components/DynamicForm";
 import { MuiTable } from "./mui/MuiTable";
+import { UserComponent } from "./components/UserComponent";
+import axios from "axios";
+import { PieChart } from "./components/PieChart";
+import { CheckButton } from "./components/CheckButton";
+import { UserDount } from "./components/UserDount";
 
 function App() {
   var no1 = 10;
@@ -44,6 +49,10 @@ function App() {
   };
   const id = 12;
 
+  axios.defaults.baseURL = process.env.REACT_APP_API_PATH;
+  console.log(process.env.REACT_APP_API_PATH)
+
+
   return (
     <div className="layout-wrapper layout-content-navbar">
       <div className="layout-container">
@@ -52,13 +61,16 @@ function App() {
         {/* <Navbar /> */}
         {/* <EcomNavbar/> */}
         <Sidebar />
+        {/* <UserComponent/> */}
         <div className="content-wrapper">
           <div class="container-xxl flex-grow-1 container-p-y">
-            
+            {/* <PieChart/> */}
+            {/* <CheckButton/> */}
+            <UserDount/>
             <AppContext.Provider value={{ id }}>
               <Routes>
                 <Route element={<ProtectedRoutes />}>
-                  <Route path="/" element={<DashBoard />} />
+                  {/* <Route path="/" element={<DashBoard />} /> */}
                   <Route path="/home" element={<Home />} />
                   <Route path="/about" element={<AboutUs />} />
                 </Route>

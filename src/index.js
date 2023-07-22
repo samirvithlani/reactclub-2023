@@ -5,15 +5,24 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
-
+import { Provider } from "react-redux";
+import {store} from "./store";
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const client = new QueryClient();
+
+
 root.render(
-  <QueryClientProvider client={client}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </QueryClientProvider>
+  <LocalizationProvider dateAdapter={AdapterDayjs}>
+  <Provider store={store}>
+    <QueryClientProvider client={client}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </QueryClientProvider>
+  </Provider>
+  </LocalizationProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
